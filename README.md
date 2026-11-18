@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/assets/chemexpress-logo-blue.svg" alt="皓元医药" height="54" />
+  <img src="docs/assets/chemexpress-logo-blue.png" alt="皓元医药" height="54" />
   <h1>皓元医药营销 CRM</h1>
   <p>面向医药销售团队的客户、拜访与订单一体化管理演示系统</p>
   <p>
