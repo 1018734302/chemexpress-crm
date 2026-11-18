@@ -1,0 +1,31 @@
+# Java / Maven
+backend/target/
+*.class
+
+# H2 database
+data/
+backend/data/
+*.mv.db
+*.trace.db
+
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/vite.config.ts.timestamp-*.mjs
+
+# Logs
+*.log
+logs/
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Local temp and tooling
+.screenshots/
+.trae-html-share-packages/
+.trae/

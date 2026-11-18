@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>皓元医药营销 CRM · 产品规格说明书 v1.8</title>
+<style>
+:root{
+  --brand:#0b4f9e; --brand-2:#1668c4; --brand-soft:#eaf2fd;
+  --teal:#0d9b8a; --teal-soft:#e6f7f4;
+  --ink:#17202b; --ink-2:#3d4a5c; --muted:#6b7a8f;
+  --line:#e2e8f0; --bg:#f5f7fa; --card:#ffffff;
+  --amber:#b46900; --amber-soft:#fff5e5;
+  --red:#c0392b; --red-soft:#fdeceb;
+  --green:#1f7a4d; --green-soft:#e9f7ef;
+  --radius:14px; --radius-sm:9px;
+  --shadow:0 1px 2px rgba(16,35,60,.04),0 8px 24px rgba(16,35,60,.06);
+  --sidebar:272px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px; line-height:1.75; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:"Cascadia Code",Consolas,monospace;font-size:12.5px;background:#eef2f7;border-radius:5px;padding:1px 6px;color:#29405c}
+.layout{display:flex;align-items:flex-start}
+/* ---------- Sidebar ---------- */
+.sidebar{
+  width:var(--sidebar); flex:0 0 var(--sidebar); position:sticky; top:0; height:100vh;
+  background:#0d1b2a; color:#c7d3e2; padding:26px 20px 30px; overflow-y:auto;
+}
+.sidebar .side-brand{display:flex;align-items:center;gap:10px;padding:0 6px 20px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:18px}
+.sidebar .side-brand img{height:30px;background:#fff;border-radius:7px;padding:4px 7px}
+.sidebar .side-brand span{font-size:12.5px;line-height:1.5;color:#9fb3c8}
+.sidebar .side-brand b{display:block;color:#fff;font-size:14px;letter-spacing:.3px}
+.toc-title{font-size:11px;letter-spacing:.16em;color:#7d93aa;margin:18px 8px 8px;font-weight:600}
+.toc a{display:block;color:#aebdcd;font-size:13.5px;padding:7px 10px;border-radius:8px;line-height:1.4;border-left:2px solid transparent}
+.toc a:hover{background:rgba(255,255,255,.06);color:#fff;text-decoration:none}
+.toc a.sub{padding-left:24px;font-size:12.5px;color:#8ea2b6}
+.toc a.active{background:rgba(22,104,196,.22);color:#fff;border-left-color:#4da3ff}
+.side-meta{margin-top:22px;padding:12px 10px;border-top:1px solid rgba(255,255,255,.1);font-size:11.5px;color:#7d93aa;line-height:1.7}
+/* ---------- Main ---------- */
+.main{flex:1;min-width:0;padding:40px 48px 90px;max-width:1180px;margin:0 auto}
+.cover{
+  background:linear-gradient(135deg,#0a2d55 0%,#0b4f9e 55%,#0d7a94 100%);
+  color:#fff;border-radius:22px;padding:44px 46px 38px;position:relative;overflow:hidden;box-shadow:var(--shadow);
+}
+.cover::after{content:"";position:absolute;right:-80px;top:-90px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(77,163,255,.35),transparent 65%)}
+.cover::before{content:"";position:absolute;right:80px;bottom:-120px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(13,155,138,.28),transparent 65%)}
+.cover .logo-chip{display:inline-flex;align-items:center;background:#fff;border-radius:10px;padding:9px 14px;margin-bottom:26px}
+.cover .logo-chip img{height:34px;display:block}
+.cover .kind{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9ed2ff;border:1px solid rgba(158,210,255,.4);padding:4px 10px;border-radius:20px;margin-bottom:18px}
+.cover h1{font-size:40px;line-height:1.25;margin:0 0 10px;letter-spacing:-.5px;position:relative;z-index:1}
+.cover .subtitle{font-size:17px;color:#c9e2ff;margin:0 0 30px;position:relative;z-index:1}
+.cover .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;border-top:1px solid rgba(255,255,255,.18);padding-top:22px;position:relative;z-index:1}
+.cover .meta div span{display:block;font-size:11.5px;color:#8fb8e0;letter-spacing:.06em;margin-bottom:3px}
+.cover .meta div b{font-size:14px;font-weight:600;color:#fff}
+.cover .notice{margin-top:22px;font-size:12px;color:#a9c9e8;position:relative;z-index:1}
+/* ---------- Sections ---------- */
+section{margin-top:44px;scroll-margin-top:24px}
+h2{font-size:25px;margin:0 0 6px;letter-spacing:-.2px;display:flex;align-items:center;gap:10px}
+h2 .no{font-size:13px;font-weight:700;color:#fff;background:var(--brand);border-radius:8px;padding:3px 9px;letter-spacing:.04em}
+h3{font-size:18.5px;margin:30px 0 10px;color:#16324f;scroll-margin-top:24px}
+h4{font-size:15.5px;margin:20px 0 8px;color:#1d3b5c}
+.lead{font-size:15.5px;color:var(--ink-2);margin:8px 0 18px}
+p{margin:9px 0}
+ul,ol{margin:8px 0;padding-left:22px}
+li{margin:4px 0}
+.small{font-size:12.8px;color:var(--muted)}
+.module-meta{font-size:12px;color:var(--muted);margin:2px 0 14px}
+/* ---------- Cards & grids ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow);margin:14px 0}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.kpi .label{font-size:12.5px;color:var(--muted)}
+.kpi .value{font-size:26px;font-weight:700;color:#0f2d4d;letter-spacing:-.5px;margin-top:4px}
+.kpi .delta{font-size:12px;color:var(--teal);margin-top:2px}
+.callout{border-left:4px solid var(--brand);background:var(--brand-soft);border-radius:0 10px 10px 0;padding:13px 18px;margin:14px 0;font-size:14px;color:#23425f}
+.callout.warn{border-left-color:var(--amber);background:var(--amber-soft);color:#6b4700}
+.callout.danger{border-left-color:var(--red);background:var(--red-soft);color:#7a241b}
+.callout.ok{border-left-color:var(--teal);background:var(--teal-soft);color:#0b554b}
+.callout b{font-weight:700}
+/* ---------- Tables ---------- */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.6}
+th{background:#f3f6fa;text-align:left;color:#42556d;font-weight:600;padding:10px 13px;border-bottom:1px solid var(--line);white-space:nowrap;font-size:12.5px}
+td{padding:10px 13px;border-bottom:1px solid #edf1f6;vertical-align:top;color:var(--ink-2)}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafcff}
+td b{color:var(--ink)}
+td small{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.center{text-align:center}
+.nowrap{white-space:nowrap}
+/* ---------- Pills ---------- */
+.pill{display:inline-block;font-size:11.5px;font-weight:600;padding:1px 9px;border-radius:20px;line-height:1.7;white-space:nowrap}
+.p-blue{background:#e8f1fd;color:#1461b8}
+.p-teal{background:var(--teal-soft);color:#0b6f62}
+.p-green{background:var(--green-soft);color:var(--green)}
+.p-amber{background:var(--amber-soft);color:var(--amber)}
+.p-red{background:var(--red-soft);color:var(--red)}
+.p-gray{background:#eef1f5;color:#5c6b7e}
+.p-dark{background:#e6e9ee;color:#2f3b4b}
+/* ---------- Flow ---------- */
+.flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin:16px 0}
+.flow .node{flex:1;min-width:150px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:12px 14px;position:relative;box-shadow:0 1px 2px rgba(16,35,60,.04)}
+.flow .node b{display:block;font-size:13.5px;color:#153a5e;margin-bottom:2px}
+.flow .node span{font-size:12px;color:var(--muted);line-height:1.55;display:block}
+.flow .node em{position:absolute;top:10px;right:11px;font-style:normal;font-size:10.5px;color:#8fa3b8;font-weight:700}
+.flow .arrow{align-self:center;color:#9bb0c6;font-size:17px;flex:0 0 auto}
+.flow.vertical{display:block}
+.flow.vertical .node{margin-bottom:0}
+.flow.vertical .arrow{display:block;text-align:left;padding:2px 0 2px 22px;font-size:15px}
+/* ---------- State machine ---------- */
+.states{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+.state{font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:8px;border:1px solid transparent}
+.s-gray{background:#f0f3f7;color:#55677d;border-color:#dde5ee}
+.s-blue{background:#e8f1fd;color:#1461b8;border-color:#c5ddf8}
+.s-amber{background:var(--amber-soft);color:#8f5200;border-color:#f2d9ae}
+.s-green{background:var(--green-soft);color:var(--green);border-color:#bfe6d2}
+.s-red{background:var(--red-soft);color:var(--red);border-color:#f3c9c4}
+.states .sep{color:#a9b8c8;font-size:13px}
+/* ---------- Wireframe ---------- */
+.wire{border:1px solid #d5dfea;border-radius:12px;background:#fbfdff;overflow:hidden;margin:14px 0}
+.wire .bar{height:34px;background:#eef4fb;border-bottom:1px solid #dbe5f0;display:flex;align-items:center;gap:6px;padding:0 12px}
+.wire .bar i{width:8px;height:8px;border-radius:50%;background:#c3d0de;display:inline-block}
+.wire .bar span{margin-left:8px;font-size:11px;color:#7b8da1}
+.wire .body{padding:14px}
+.wire .row{display:flex;gap:10px;margin-bottom:10px}
+.wire .box{background:#fff;border:1px dashed #c9d6e5;border-radius:7px;padding:10px;font-size:11.5px;color:#7a8ca0;flex:1;min-height:44px}
+.wire .box.fill{background:#f2f7fd;border-style:solid;border-color:#dbe7f5}
+.wire .box b{display:block;font-size:11.5px;color:#3b5270;margin-bottom:2px;font-weight:600}
+.wire .box.tall{min-height:88px}
+.wire .box.chart{min-height:96px;background:linear-gradient(180deg,#f7fbff,#eef6ff);display:flex;align-items:flex-end;gap:6px;padding:10px}
+.wire .box.chart i{display:block;width:14%;background:#bcd8f7;border-radius:3px 3px 0 0}
+.wire .side{flex:0 0 22%;background:#eef3f9;border:1px dashed #c9d6e5;border-radius:7px;min-height:120px}
+/* ---------- Misc ---------- */
+.toc-top{font-size:11px;color:var(--muted);letter-spacing:.1em;margin-top:26px}
+.badge-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.tag{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:7px;padding:4px 10px;color:var(--ink-2)}
+.hr{height:1px;background:var(--line);margin:26px 0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.rule-list{counter-reset:r;list-style:none;padding-left:0}
+.rule-list li{position:relative;padding-left:34px;margin:9px 0}
+.rule-list li::before{counter-increment:r;content:counter(r);position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:6px;background:var(--brand-soft);color:var(--brand);font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.q{background:#fff;border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:0 10px 10px 0;padding:14px 18px;margin:12px 0}
+.q b{display:block;color:#6b4700;margin-bottom:3px}
+.q p{margin:2px 0;font-size:13.5px;color:var(--ink-2)}
+.q .opt{font-size:12.5px;color:var(--muted);margin-top:5px}
+.footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.backtop{position:fixed;right:26px;bottom:26px;width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;color:var(--brand);font-size:18px;z-index:5}
+.backtop:hover{text-decoration:none;background:var(--brand-soft)}
+@media (max-width:1100px){
+  .sidebar{display:none}
+  .main{padding:26px 22px 70px}
+  .cover{padding:30px 26px}
+  .cover h1{font-size:30px}
+  .cover .meta{grid-template-columns:1fr 1fr}
+  .grid-2,.grid-3,.grid-4,.two-col{grid-template-columns:1fr}
+}
+@media print{
+  .sidebar,.backtop{display:none}
+  body{background:#fff;font-size:11pt}
+  .main{max-width:none;padding:0}
+  .cover{box-shadow:none}
+  section{break-inside:avoid}
+  .card,.table-wrap{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="side-brand">
+    <img src="assets/chemexpress-logo-blue.svg" alt="皓元医药 ChemExpress">
+    <span><b>营销 CRM</b>产品规格 v1.8</span>
+  </div>
+  <div class="toc-title">目录</div>
+  <nav class="toc" id="toc">
+    <a href="#mvp-cut">00 本次实施范围（MVP）</a>
+    <a href="#overview">01 概述与目标</a>
+    <a href="#roles">02 角色与权限</a>
+    <a href="#scope">03 范围与边界</a>
+    <a href="#flows">04 核心业务流程</a>
+    <a href="#features">05 功能需求</a>
+    <a class="sub" href="#f-login">5.1 登录与工作台</a>
+    <a class="sub" href="#f-customer">5.2 客户与联系人</a>
+    <a class="sub" href="#f-visit">5.3 拜访管理</a>
+    <a class="sub" href="#f-product">5.4 产品管理（MVP 只读）</a>
+    <a class="sub" href="#f-target">5.5 销售目标与业绩（P1）</a>
+    <a class="sub" href="#f-order">5.6 订单管理</a>
+    <a class="sub" href="#f-flow">5.7 流向管理（P1）</a>
+    <a class="sub" href="#f-report">5.8 报表中心（P1）</a>
+    <a class="sub" href="#f-system">5.9 系统管理（P1）</a>
+    <a class="sub" href="#f-p1">5.10 P1 预留模块</a>
+    <a href="#rules">06 共享业务规则</a>
+    <a href="#demo">07 演示数据与自测</a>
+    <a href="#tech">08 技术交付约束</a>
+    <a href="#accept">09 验收标准</a>
+    <a href="#open">10 待确认问题</a>
+  </nav>
+  <div class="side-meta">
+    皓元医药 · 营销 CRM<br>
+    文档版本 v1.8 · MVP 评审稿<br>
+    2026-11-18
+  </div>
+</aside>
+<main class="main">
+
+<header class="cover">
+  <div class="logo-chip"><img src="assets/chemexpress-logo-blue.svg" alt="皓元医药 ChemExpress"></div>
+  <div class="kind">MVP Product Specification · 评审稿</div>
+  <h1>皓元医药营销 CRM 平台</h1>
+  <p class="subtitle">客户、拜访、订单与工作台 MVP · 全流程网页可自测</p>
+  <div class="meta">
+    <div><span>文档版本</span><b>v1.8</b></div>
+    <div><span>更新日期</span><b>2026-11-18</b></div>
+    <div><span>适用端</span><b>Web · 桌面优先</b></div>
+    <div><span>交付形态</span><b>Java + Vue 可运行系统</b></div>
+  </div>
+  <p class="notice">说明：本规格为可本地运行的演示项目。皓元医药品牌标识仅用于界面演示，演示客户、产品与经营数据均为虚构，不代表皓元医药真实业务或对外承诺。v1.8 已按评审结论裁剪为 MVP 范围。</p>
+</header>
+
+<section id="mvp-cut">
+  <h2><span class="no">00</span>本次实施范围（MVP）</h2>
+  <p class="lead">评审结论：先交付一条可完整自测的核心链路，把客户、拜访、订单做扎实；流向、报表、目标与系统管理后置到 P1。</p>
+  <div class="grid-2">
+    <div class="card">
+      <h4>本次实现（MVP）</h4>
+      <ul>
+        <li>登录 / 工作台（按角色展示 KPI 与待办）</li>
+        <li>客户与联系人（建档、分级、状态、转交、360° 详情）</li>
+        <li>拜访（计划、签到、记录、审批、驳回重提、取消）</li>
+        <li>订单（下单、审批、发货、多次回款、自动完成）</li>
+        <li>产品只读列表（拜访与订单的选择依赖，不做维护页）</li>
+        <li>演示数据自动生成 + 管理员一键重置</li>
+        <li>角色与数据范围：管理员、地区经理、医药代表、商务运营</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>后置到 P1</h4>
+      <ul>
+        <li>销售目标与业绩（MVP 工作台不显示完成率）</li>
+        <li>流向导入与流向看板</li>
+        <li>报表中心与 CSV 导出</li>
+        <li>系统管理（用户、字典、审计日志）</li>
+        <li>学术活动、费用预算、消息通知</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout ok"><b>已确认决策：</b>H2 内置数据库；全部虚构演示数据；皓元深蓝 + 医疗青视觉；桌面优先；产品维护、目标、流向、报表、系统管理暂不实现入口。</div>
+  <div class="callout"><b>MVP 完成定义：</b>仅通过网页完成“登录 → 新建客户 → 建拜访 → 签到 → 提交 → 经理审批 → 下单 → 经理审批 → 运营发货 → 两次回款 → 订单自动完成”，并可一键重置后重复自测。</div>
+</section>
+
+<section id="overview">
+  <h2><span class="no">01</span>概述与目标</h2>
+  <p class="lead">用一条完整的“客户 → 拜访 → 订单 → 流向 → 业绩”链路，验证医药营销团队日常协作在网页端可以闭环完成。</p>
+
+  <h3>1.1 背景与问题</h3>
+  <div class="card">
+    <p><b>观察到的现状：</b>医药销售团队的客户档案、拜访记录、销售订单、商业流向和业绩目标通常散落在 Excel、聊天记录与多个系统中。代表在客户现场无法快速调取历史拜访与产品信息，地区经理难以及时掌握团队过程数据，商务运营需要反复手工汇总流向。</p>
+    <p><b>受影响的人与时刻：</b>医药代表在客户拜访前后、地区经理在每周例会前、商务运营在月度流向汇总时。</p>
+    <p><b>产品决策：</b>建设一个以“客户”为核心对象、以“拜访”为过程抓手、以“订单与流向”为结果数据的医药 CRM，并把审批、权限、统计放在同一套数据口径下。</p>
+    <p><b>可观察的结果：</b>代表从新建客户开始，可在网页上完成拜访计划、签到、记录提交；经理在同一页面完成审批；订单发货、回款后业绩自动进入工作台与报表；商务可上传流向文件并立即看到分析结果；管理员可一键恢复演示数据。</p>
+  </div>
+
+  <h3>1.2 产品定位</h3>
+  <div class="grid-3">
+    <div class="card"><h4>对代表</h4><p class="small">一个“今天该做什么、客户发生了什么”的随身工作台，减少重复填报。</p></div>
+    <div class="card"><h4>对经理</h4><p class="small">一个可审、可看、可追的过程管理视图，审批与业绩一屏掌握。</p></div>
+    <div class="card"><h4>对运营</h4><p class="small">一个统一的订单、流向与主数据入口，替代手工汇总。</p></div>
+  </div>
+
+  <h3>1.3 目标（以可观察行为描述）</h3>
+  <ul>
+    <li>新测试者无需阅读代码或使用数据库工具，仅通过网页即可完成“建档 → 拜访 → 审批 → 下单 → 发货 → 回款”的主链路。</li>
+    <li>代表只能看到自己负责的客户与业务数据；地区经理只能看到本区域；越权访问返回明确的“无权限”提示而不是空白页。</li>
+    <li>拜访与订单被驳回后，提交人能看到驳回原因、修改并重新提交，已填写的内容不丢失。</li>
+    <li>商务上传流向文件后，系统给出“成功 / 覆盖 / 失败”的明确结果，并能在看板与报表中看到变化。</li>
+    <li>管理员执行“重置演示数据”后，系统恢复到统一的初始状态，所有账号可再次按同一脚本自测。</li>
+  </ul>
+
+  <h3>1.4 演示边界</h3>
+  <div class="callout warn"><b>演示环境声明：</b>系统定位为本地演示与能力验证，不接入真实医院、商业公司、支付、短信、地图或税务系统。签到使用“演示定位”，不调用浏览器真实定位权限，保证任何机器上都能稳定自测。</div>
+</section>
+
+<section id="roles">
+  <h2><span class="no">02</span>角色与权限</h2>
+  <p class="lead">五个固定角色覆盖“代表执行、经理审批、运营履约、管理员治理”的完整协作面。角色不可在界面上新增或改权限，避免演示过程中出现不可复现的权限状态。</p>
+
+  <h3>2.1 角色定义</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:13%">角色</th><th style="width:17%">职责</th><th style="width:26%">数据范围</th><th>核心操作</th></tr></thead>
+    <tbody>
+      <tr><td><b>系统管理员</b><br><small>ADMIN</small></td><td>系统治理与数据维护</td><td>全部数据</td><td>用户与字典维护、审计日志、数据重置；只读业务数据，不代提交业务单据</td></tr>
+      <tr><td><b>地区经理</b><br><small>DSM</small></td><td>区域过程与结果管理</td><td>本区域（华东 / 华北）</td><td>审批拜访与订单、查看团队业绩、设置团队目标、转交客户负责人</td></tr>
+      <tr><td><b>医药代表</b><br><small>MR</small></td><td>客户开发与维护</td><td>本人负责的客户及其业务</td><td>客户与联系人维护、拜访计划/签到/记录、创建订单、查看本人目标与业绩</td></tr>
+      <tr><td><b>商务运营</b><br><small>OPS</small></td><td>订单履约与流向管理</td><td>全部业务数据（只读客户主数据）</td><td>订单发货、回款登记、产品维护、流向导入与批次管理、报表导出</td></tr>
+      <tr><td><b>市场经理</b><br><small>MKT</small></td><td>市场活动与学术推广（P1）</td><td>全部客户（只读）与活动数据</td><td>活动计划、预算与执行记录；P0 阶段仅提供角色占位，不开放登录</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>2.2 演示账号</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>账号</th><th>姓名</th><th>角色</th><th>区域</th><th>初始密码</th><th>用途</th></tr></thead>
+    <tbody>
+      <tr><td><code>admin</code></td><td>谢震宇</td><td><span class="pill p-dark">管理员</span></td><td>—</td><td><code>Chem@123</code></td><td>系统配置、审计、数据重置</td></tr>
+      <tr><td><code>dsm.east</code></td><td>李强</td><td><span class="pill p-blue">地区经理</span></td><td>华东</td><td><code>Chem@123</code></td><td>华东审批与团队看板</td></tr>
+      <tr><td><code>dsm.north</code></td><td>王敏</td><td><span class="pill p-blue">地区经理</span></td><td>华北</td><td><code>Chem@123</code></td><td>华北审批与团队看板</td></tr>
+      <tr><td><code>mr.chen</code></td><td>陈晨</td><td><span class="pill p-teal">医药代表</span></td><td>华东</td><td><code>Chem@123</code></td><td>主自测账号：客户、拜访、订单</td></tr>
+      <tr><td><code>mr.liu</code></td><td>刘洋</td><td><span class="pill p-teal">医药代表</span></td><td>华东</td><td><code>Chem@123</code></td><td>验证团队汇总与排行</td></tr>
+      <tr><td><code>mr.zhao</code></td><td>赵磊</td><td><span class="pill p-teal">医药代表</span></td><td>华北</td><td><code>Chem@123</code></td><td>验证跨区域隔离</td></tr>
+      <tr><td><code>mr.sun</code></td><td>孙悦</td><td><span class="pill p-teal">医药代表</span></td><td>华北</td><td><code>Chem@123</code></td><td>验证团队汇总与排行</td></tr>
+      <tr><td><code>ops.zhou</code></td><td>周琳</td><td><span class="pill p-amber">商务运营</span></td><td>总部</td><td><code>Chem@123</code></td><td>发货、回款、流向导入</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">登录页提供账号快捷填充按钮，密码统一为 <code>Chem@123</code>，仅用于本地演示。管理员重置密码后恢复为该值。</p>
+
+  <h3>2.3 权限矩阵</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>功能</th><th class="center">管理员</th><th class="center">地区经理</th><th class="center">医药代表</th><th class="center">商务运营</th></tr></thead>
+    <tbody>
+      <tr><td>工作台</td><td class="center">全量</td><td class="center">本区域</td><td class="center">本人</td><td class="center">全量（履约视角）</td></tr>
+      <tr><td>客户 / 联系人</td><td class="center">只读</td><td class="center">本区域读写</td><td class="center">本人读写</td><td class="center">只读</td></tr>
+      <tr><td>拜访</td><td class="center">只读</td><td class="center">审批 + 只读</td><td class="center">本人创建/修改</td><td class="center">只读</td></tr>
+      <tr><td>产品</td><td class="center">读写</td><td class="center">只读</td><td class="center">只读</td><td class="center">读写</td></tr>
+      <tr><td>销售目标</td><td class="center">全量读写</td><td class="center">本区域设置</td><td class="center">本人只读</td><td class="center">只读</td></tr>
+      <tr><td>订单</td><td class="center">只读</td><td class="center">本区域审批</td><td class="center">本人创建/查看</td><td class="center">全量履约</td></tr>
+      <tr><td>流向</td><td class="center">只读 + 删批次</td><td class="center">本区域只读</td><td class="center">无</td><td class="center">导入/查看/删除</td></tr>
+      <tr><td>报表</td><td class="center">全量导出</td><td class="center">本区域导出</td><td class="center">本人导出</td><td class="center">全量导出</td></tr>
+      <tr><td>系统管理</td><td class="center">全部</td><td class="center">—</td><td class="center">—</td><td class="center">—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>2.4 数据权限规则</h3>
+  <ul class="rule-list">
+    <li><b>代表范围：</b>客户负责人为本人，或拜访/订单由本人创建且客户负责人已转交时，仍保留历史单据可见性（只读）。</li>
+    <li><b>经理范围：</b>客户所属区域等于经理区域；跨区域数据在列表、详情、导出与统计中均不可见。</li>
+    <li><b>越权访问：</b>通过 URL 直接访问无权对象时，返回统一的无权限页（403），不泄露对象名称与金额。</li>
+    <li><b>操作校验：</b>前端隐藏无权按钮，后端再次校验；任何绕过前端的数据修改请求均被拒绝并记录审计。</li>
+  </ul>
+</section>
+
+<section id="scope">
+  <h2><span class="no">03</span>范围与边界</h2>
+  <p class="lead">P0 以“单条业务链路可完整自测”为准，不追求模块数量。活动、费用等参考站模块放入 P1，避免主链路被稀释。</p>
+
+  <h3>3.1 完整产品规划（P0 原始范围，供后续迭代）</h3>
+  <div class="callout warn"><b>v1.8 裁剪说明：</b>本次只实现 M1 登录与工作台、M2 客户与联系人、M3 拜访、M6 订单，并保留产品只读列表与演示数据重置；M4 产品维护、M5 目标业绩、M7 流向、M8 报表、M9 系统管理移入 P1，不在 MVP 导航中出现。</div>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:8%">编号</th><th style="width:20%">模块</th><th>P0 必须可自测的内容</th></tr></thead>
+    <tbody>
+      <tr><td>M1</td><td><b>登录与工作台</b></td><td>账号登录/退出、按角色呈现 KPI 与待办、近 6 个月趋势、今日拜访、最近动态</td></tr>
+      <tr><td>M2</td><td><b>客户与联系人</b></td><td>四类客户建档、分级与状态流转、联系人维护、负责人转交、客户 360° 详情</td></tr>
+      <tr><td>M3</td><td><b>拜访管理</b></td><td>计划、签到、记录提交、经理审批/驳回、重提、取消、逾期标识</td></tr>
+      <tr><td>M4</td><td><b>产品管理</b></td><td>产品档案 CRUD、上下架、产品选择器；订单价格快照</td></tr>
+      <tr><td>M5</td><td><b>销售目标与业绩</b></td><td>按代表/产品/月份设置目标，业绩自动汇总，完成率与团队排行</td></tr>
+      <tr><td>M6</td><td><b>订单管理</b></td><td>下单、审批、发货、多次回款、完成/驳回/取消、订单时间线</td></tr>
+      <tr><td>M7</td><td><b>流向管理</b></td><td>CSV 模板下载、上传校验、预览、部分成功、错误报告、批次管理、流向看板</td></tr>
+      <tr><td>M8</td><td><b>报表中心</b></td><td>销售、拜访、流向、客户四类报表，筛选联动图表，CSV 导出</td></tr>
+      <tr><td>M9</td><td><b>系统管理</b></td><td>用户管理、角色矩阵查看、字典维护、审计日志、演示数据重置</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>3.2 P1 预留（本期不实现）</h3>
+  <div class="badge-row">
+    <span class="tag">销售目标与业绩</span>
+    <span class="tag">流向导入与看板</span>
+    <span class="tag">报表中心 / CSV 导出</span>
+    <span class="tag">系统管理（用户/字典/审计）</span>
+    <span class="tag">学术活动与会议管理</span>
+    <span class="tag">费用申请 / 核销 / 预算</span>
+    <span class="tag">消息通知中心</span>
+    <span class="tag">拜访日历视图</span>
+    <span class="tag">全局搜索</span>
+    <span class="tag">附件在线预览</span>
+    <span class="tag">客户地图分布</span>
+  </div>
+  <p class="small">P1 数据结构预留但不开放入口，避免演示时出现“可点击但无功能”的死页。</p>
+
+  <h3>3.3 明确不做</h3>
+  <ul>
+    <li>结算政策、绩效奖金、推广商管理、AI 陪练等参考站进阶模块。</li>
+    <li>真实地图定位、短信/邮件、企业微信、支付、税务与 ERP 对接。</li>
+    <li>多租户、组织架构树、动态权限配置、工作流引擎。</li>
+    <li>库存管理：订单不做库存扣减与缺货校验，仅记录交易与履约状态。</li>
+  </ul>
+</section>
+
+<section id="flows">
+  <h2><span class="no">04</span>核心业务流程</h2>
+  <p class="lead">三条主链路构成 P0 的完整闭环。所有状态、金额与统计口径在后续功能章节中只定义一次，其他模块引用本章。</p>
+
+  <h3>4.1 客户到拜访闭环</h3>
+  <div class="flow">
+    <div class="node"><em>01</em><b>新建客户</b><span>代表建档，选择医院/药店/商业公司，系统生成客户编码</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>02</em><b>添加联系人</b><span>设置主要联系人，记录职务与角色</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>03</em><b>拜访计划</b><span>选择客户、日期、目的，进入“计划中”</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>04</em><b>签到</b><span>拜访当日演示签到，记录时间与距离</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>05</em><b>提交记录</b><span>填写结果、反馈、下一步与产品</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>06</em><b>经理审批</b><span>通过或驳回；驳回必须填写原因</span></div>
+  </div>
+  <div class="card">
+    <p><b>完成条件：</b>拜访状态为“已通过”，客户详情出现该拜访记录，代表与经理工作台的拜访统计同步更新。</p>
+    <p><b>失败与恢复：</b>驳回后代表可修改并重新提交；已签到但当天未提交的记录保留为“已签到”，次日可在详情中补交（计入实际提交日期）；计划当日未签到视为逾期，可改期或取消。</p>
+    <p><b>关键约束：</b>同一客户同一天只允许一条未结束（计划中/已签到/待审批）的拜访；已通过记录不可编辑；代表不能审批自己的记录。</p>
+  </div>
+
+  <h3>4.2 订单到回款</h3>
+  <div class="flow">
+    <div class="node"><em>01</em><b>创建订单</b><span>选择合作中客户与在售产品，录入数量与折扣</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>02</em><b>提交审批</b><span>订单进入“待审批”，金额锁定快照</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>03</em><b>经理审批</b><span>通过后进入“待发货”，驳回需填原因</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>04</em><b>运营发货</b><span>登记发货时间与物流单号，进入“已发货”</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>05</em><b>回款登记</b><span>可多次登记，累计不超过订单金额</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>06</em><b>自动完成</b><span>累计回款等于订单金额时自动“已完成”</span></div>
+  </div>
+  <div class="card">
+    <p><b>完成条件：</b>订单状态为“已完成”，回款合计等于订单含税金额，销售业绩按“已发货 + 已完成”计入。</p>
+    <p><b>失败与恢复：</b>审批驳回后订单可编辑并重新提交；未发货前可取消；已发货或已有回款时禁止取消，避免产生负向资金记录。</p>
+    <p><b>金额口径：</b>行金额 = 单价 × 数量 × (1 − 折扣率)，四舍五入保留 2 位；订单金额 = 所有行金额之和；单价取提交时的产品价格快照，后续改价不影响历史订单。</p>
+  </div>
+
+  <h3>4.3 流向导入</h3>
+  <div class="flow">
+    <div class="node"><em>01</em><b>下载模板</b><span>获取含示例行的 CSV 模板</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>02</em><b>上传文件</b><span>选择 UTF-8 CSV，≤ 2MB / 2000 行</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>03</em><b>系统校验</b><span>逐行校验主数据、月份、数量与金额</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>04</em><b>预览确认</b><span>展示前 20 行与错误清单，可取消</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>05</em><b>确认导入</b><span>正确行入库，错误行生成报告</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>06</em><b>看板更新</b><span>流向金额、数量、Top 排名与环比刷新</span></div>
+  </div>
+  <div class="callout"><b>唯一口径：</b>“商业公司 + 产品 + 月份”为一条流向记录的唯一键。重复导入同一键时覆盖原值，并计入本次批次的“覆盖”数量；批次可整体删除，删除后该键无记录。</div>
+  <div class="callout warn"><b>可自测性要求：</b>导入页面必须提供“下载示例文件（含 3 条错误行）”，测试者无需自备数据即可验证成功、覆盖、失败三类结果。</div>
+
+  <h3>4.4 演示数据重置</h3>
+  <div class="flow">
+    <div class="node"><em>01</em><b>管理员进入</b><span>系统管理 → 演示数据</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>02</em><b>二次确认</b><span>输入 RESET，展示将清空的数据范围</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>03</em><b>重建数据</b><span>清空业务表，写入固定种子数据</span></div>
+    <div class="arrow">→</div>
+    <div class="node"><em>04</em><b>强制重登</b><span>所有会话失效，跳转登录页</span></div>
+  </div>
+</section>
+
+<section id="features">
+  <h2><span class="no">05</span>功能需求</h2>
+  <p class="lead">每个模块按“目的 → 页面与布局 → 规则 → 状态 → 异常”描述。未特别说明的列表均支持关键词搜索、条件筛选、分页与空态提示。</p>
+
+  <h3 id="f-login">5.1 登录与工作台</h3>
+  <p class="module-meta">对应页面：<code>/login</code>、<code>/dashboard</code> · 角色：全部</p>
+  <div class="callout ok"><b>MVP 调整：</b>工作台 KPI 固定为“本月销售额、活跃客户、本月拜访、待我处理”，不显示目标完成率；待办包含待审批拜访/订单与被驳回待修改。图表为近 6 个月销售额趋势与客户类型分布。</div>
+
+  <h4>目的</h4>
+  <p>让用户在一屏内知道“我是谁、我今天要做什么、我的结果如何”，并能快速进入待处理事项。</p>
+
+  <h4>登录页</h4>
+  <ul>
+    <li>左侧品牌区展示皓元医药 Logo、产品名与一句价值主张；右侧为账号密码表单。</li>
+    <li>提供 5 个演示账号快捷按钮（管理员、华东经理、代表陈晨、运营周琳、华北代表赵磊），点击后自动填充账号与密码。</li>
+    <li>校验：账号不存在、密码错误、账号被停用分别给出不同提示；连续 5 次失败锁定 10 分钟（演示环境保留该规则）。</li>
+    <li>登录成功写入 JWT，有效期 8 小时；退出登录清除本地令牌并回到登录页。</li>
+  </ul>
+
+  <h4>工作台布局（桌面）</h4>
+  <div class="wire">
+    <div class="bar"><i></i><i></i><i></i><span>皓元医药营销 CRM / 工作台</span></div>
+    <div class="body">
+      <div class="row">
+        <div class="box fill" style="flex:2"><b>顶部欢迎区</b>你好，陈晨 · 华东 · 医药代表　｜　今日 2 个拜访计划</div>
+        <div class="box" style="flex:1"><b>快捷入口</b>新建客户 / 新建拜访 / 新建订单</div>
+      </div>
+      <div class="row">
+        <div class="box"><b>本月销售额</b>¥ 1,286,400</div>
+        <div class="box"><b>目标完成率</b>86.4%</div>
+        <div class="box"><b>活跃客户</b>28</div>
+        <div class="box"><b>本月拜访</b>16 次</div>
+      </div>
+      <div class="row">
+        <div class="box chart" style="flex:2"><i style="height:45%"></i><i style="height:62%"></i><i style="height:38%"></i><i style="height:78%"></i><i style="height:58%"></i><i style="height:88%"></i></div>
+        <div class="box tall" style="flex:1"><b>待办</b>待审批 2 · 被驳回 1 · 草稿订单 1</div>
+      </div>
+      <div class="row">
+        <div class="box tall" style="flex:1"><b>今日拜访</b>09:30 市第一医院 · 已签到</div>
+        <div class="box tall" style="flex:1"><b>最近动态</b>王敏 通过了拜访记录 · 10 分钟前</div>
+      </div>
+    </div>
+  </div>
+
+  <h4>按角色呈现</h4>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:14%">角色</th><th>KPI 卡片</th><th>主图表</th><th>待办 / 列表</th></tr></thead>
+    <tbody>
+      <tr><td>医药代表</td><td>本人本月销售额、目标完成率、活跃客户、本月拜访</td><td>本人近 6 个月销售额趋势、产品销售占比</td><td>今日拜访、被驳回待修改、草稿订单</td></tr>
+      <tr><td>地区经理</td><td>本区域销售额、区域完成率、活跃客户、团队拜访</td><td>区域 6 个月趋势、代表业绩排行</td><td>待审批拜访、待审批订单、逾期拜访</td></tr>
+      <tr><td>商务运营</td><td>待发货订单、本月发货金额、待回款金额、本月流向金额</td><td>近 6 个月流向趋势、商业公司 Top 5</td><td>待发货订单、最近导入批次</td></tr>
+      <tr><td>管理员</td><td>用户数、客户总数、本月订单额、本月拜访</td><td>全量销售趋势、区域分布</td><td>最近审计日志、系统健康提示</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h4>规则</h4>
+  <ul>
+    <li>销售额 = 当月“已发货 + 已完成”订单金额，按订单归属代表统计；不含草稿、待审批、已驳回、已取消。</li>
+    <li>目标完成率 = 本月销售额 ÷ 本月目标；目标缺失或为 0 时显示“—”，不显示 0%。</li>
+    <li>活跃客户 = 状态为“合作中”且归属当前用户数据范围的客户数。</li>
+    <li>本月拜访 = 状态为“已通过”的拜访数；待审批单独展示，不混入。</li>
+    <li>“最近动态”仅展示当前用户可见范围内的拜访审批、订单状态变更与流向导入，最多 8 条。</li>
+  </ul>
+
+  <h4>异常与空态</h4>
+  <ul>
+    <li>无数据时图表显示占位插画与“暂无数据”，不显示误导性的 0 曲线。</li>
+    <li>接口失败时卡片显示“加载失败，点击重试”，其他区块不受影响。</li>
+  </ul>
+
+  <h3 id="f-customer">5.2 客户与联系人</h3>
+  <p class="module-meta">对应页面：<code>/customers</code>、<code>/customers/:id</code> · 角色：代表、经理、管理员（只读）、运营（只读）</p>
+
+  <h4>目的</h4>
+  <p>把医院、连锁、单体药店与商业公司统一成可分级、可归属、可追踪的客户资产，并沉淀关键联系人。</p>
+
+  <h4>列表页</h4>
+  <ul>
+    <li>顶部统计条：客户总数、合作中、本月新增、A 级客户数（均随筛选条件变化）。</li>
+    <li>筛选：关键词（名称/编码）、客户类型、等级、区域、状态、负责人；支持重置。</li>
+    <li>列表列：客户编码、名称、类型、等级、区域、负责人、状态、最近拜访、年潜力、操作。</li>
+    <li>“最近拜访”取最近一条已通过拜访日期；无记录显示“—”。</li>
+    <li>行操作：查看、编辑、转交负责人（经理/管理员）、删除（满足删除条件时）。</li>
+    <li>分页默认 20 条，可切换 10/20/50；排序支持名称、最近拜访、年潜力。</li>
+  </ul>
+
+  <h4>客户字段</h4>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:15%">字段</th><th style="width:12%">必填</th><th style="width:18%">类型 / 规则</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>客户编码</td><td>系统生成</td><td><code>CUS-0001</code></td><td>创建后不可修改，全局唯一</td></tr>
+      <tr><td>客户名称</td><td>是</td><td>2–60 字</td><td>同一区域 + 类型下不可重名</td></tr>
+      <tr><td>客户类型</td><td>是</td><td>医院 / 连锁药店 / 单体药店 / 商业公司</td><td>创建后不可修改</td></tr>
+      <tr><td>等级</td><td>是</td><td>A / B / C</td><td>默认 C；A 级需填写年潜力</td></tr>
+      <tr><td>区域</td><td>是</td><td>华东 / 华北</td><td>决定数据权限归属</td></tr>
+      <tr><td>负责人</td><td>是</td><td>本区域医药代表</td><td>经理/管理员可转交</td></tr>
+      <tr><td>状态</td><td>是</td><td>潜在 / 合作中 / 暂停 / 流失</td><td>状态流转见下</td></tr>
+      <tr><td>地址</td><td>是</td><td>5–120 字</td><td>用于展示与演示签到距离</td></tr>
+      <tr><td>年采购潜力</td><td>A 级必填</td><td>0–999,999,999 元</td><td>整数，单位元</td></tr>
+      <tr><td>标签</td><td>否</td><td>最多 5 个，每个 ≤ 8 字</td><td>如“重点开发”“集采品种”</td></tr>
+      <tr><td>来源</td><td>否</td><td>陌拜 / 转介绍 / 市场活动 / 商业推荐</td><td>默认陌拜</td></tr>
+      <tr><td>备注</td><td>否</td><td>≤ 500 字</td><td>—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h4>客户状态流转</h4>
+  <div class="states">
+    <span class="state s-blue">潜在</span><span class="sep">→</span>
+    <span class="state s-green">合作中</span><span class="sep">⇄</span>
+    <span class="state s-amber">暂停合作</span><span class="sep">→</span>
+    <span class="state s-gray">已流失</span>
+  </div>
+  <ul>
+    <li>允许：潜在 → 合作中 / 已流失；合作中 → 暂停 / 已流失；暂停 → 合作中 / 已流失；已流失 → 潜在（重新激活）。</li>
+    <li>转“已流失”必须填写流失原因（≤ 200 字），并由地区经理及以上操作；代表只能申请，不能直接置为流失。</li>
+    <li>状态变更写入客户时间线与审计日志。</li>
+  </ul>
+
+  <h4>联系人</h4>
+  <ul>
+    <li>联系人列表位于客户详情“联系人”页签，字段：姓名、职务、角色（决策人/采购/药剂科/店长/其他）、手机、邮箱、是否主要联系人、备注。</li>
+    <li>每个客户最多 1 位主要联系人；设置新的主要联系人时自动取消原主要联系人。</li>
+    <li>手机号 11 位数字，可空；列表中间四位掩码（如 138****5678），详情页显示完整。</li>
+    <li>被拜访记录引用的联系人不可删除，提示“该联系人已被拜访记录引用”；可改为“停用”状态。</li>
+  </ul>
+
+  <h4>客户 360° 详情</h4>
+  <div class="grid-4">
+    <div class="kpi"><div class="label">基础信息</div><div class="value" style="font-size:15px">档案 + 状态</div><div class="delta">编辑 / 转交</div></div>
+    <div class="kpi"><div class="label">联系人</div><div class="value" style="font-size:15px">关键角色</div><div class="delta">主要联系人置顶</div></div>
+    <div class="kpi"><div class="label">拜访记录</div><div class="value" style="font-size:15px">时间线</div><div class="delta">结果与下一步</div></div>
+    <div class="kpi"><div class="label">订单 / 流向</div><div class="value" style="font-size:15px">交易视图</div><div class="delta">商业公司显示流向</div></div>
+  </div>
+  <p class="small">页签顺序：概览、联系人、拜访记录、订单、流向（仅商业公司）、操作日志。概览展示年潜力、负责人、最近拜访、近 6 个月订单额与拜访频次。</p>
+
+  <h4>删除与转交</h4>
+  <ul>
+    <li>仅当客户无拜访、无订单、无流向记录时允许删除；否则提示并引导改为“暂停合作”或“已流失”。</li>
+    <li>转交负责人必须选择同区域代表；转交后历史拜访与订单归属不变，新拜访/订单归属新负责人；写入审计。</li>
+    <li>管理员与运营对客户只读，不显示编辑与转交按钮。</li>
+  </ul>
+
+  <h4>异常</h4>
+  <ul>
+    <li>重名、编码冲突、负责人跨区域、A 级未填潜力均给出字段级错误，保留已填内容。</li>
+    <li>客户被他人修改后提交：提示“数据已更新，请刷新后重试”，不静默覆盖。</li>
+    <li>列表无结果时展示“未找到匹配客户”，并提供清除筛选按钮。</li>
+  </ul>
+
+  <h3 id="f-visit">5.3 拜访管理</h3>
+  <p class="module-meta">对应页面：<code>/visits</code>、<code>/visits/:id</code> · 角色：代表（执行）、经理（审批）、管理员/运营（只读）</p>
+
+  <h4>目的</h4>
+  <p>把“去了哪、见了谁、谈了什么、下一步做什么”变成结构化过程数据，并为经理提供可审批、可追踪的团队视图。</p>
+
+  <h4>列表页</h4>
+  <ul>
+    <li>视图切换：列表 / 按日期分组（默认列表）。</li>
+    <li>筛选：关键词（客户/代表）、状态、拜访目的、日期范围、区域（经理）。</li>
+    <li>列：拜访编号、客户、联系人、拜访日期、目的、代表、状态、签到时间、操作。</li>
+    <li>状态徽标颜色与状态机一致；“计划中”且日期早于今天显示“已逾期”红色角标。</li>
+    <li>经理默认进入“待我审批”筛选；代表默认“我的拜访”。</li>
+    <li>列表底部展示当前筛选下的拜访总数与通过率。</li>
+  </ul>
+
+  <h4>创建拜访计划</h4>
+  <ul>
+    <li>必填：客户（当前用户可见且非流失）、拜访日期（今天或未来 30 天内）、拜访目的（开发/维护/上量/学术推广/客情）。</li>
+    <li>选填：联系人（限该客户联系人）、计划时间、同行人员、备注。</li>
+    <li>保存后状态为“计划中”，生成拜访编号 <code>VIS-YYYYMM-0001</code>。</li>
+  </ul>
+
+  <h4>签到与提交记录</h4>
+  <ul>
+    <li>签到仅在拜访日期当天可操作；点击“演示签到”后记录签到时间与“距客户地址 86 米（模拟）”，状态变为“已签到”。</li>
+    <li>签到后进入记录表单，必填：拜访结果（成功/部分达成/未达成）、客户反馈（10–1000 字）、下一步计划（5–500 字）、关联产品（至少 1 个）。</li>
+    <li>选填：竞品信息、附件（jpg/png/pdf，单个 ≤ 5MB，最多 3 个）。</li>
+    <li>提交后状态为“待审批”，记录内容锁定；经理驳回后恢复可编辑。</li>
+  </ul>
+
+  <h4>审批</h4>
+  <ul>
+    <li>地区经理只能审批本区域拜访，且不能审批自己创建的记录（代表角色不产生自审场景，后端仍校验）。</li>
+    <li>通过：状态变为“已通过”，记录审批人与审批时间，更新客户“最近拜访”，工作台统计刷新。</li>
+    <li>驳回：必须填写 5–200 字原因；状态变为“已驳回”，代表收到待办；代表修改后重新提交回到“待审批”。</li>
+    <li>审批操作需二次确认；通过后不可撤销（管理员亦不可改），如需修正由代表新建补充拜访。</li>
+  </ul>
+
+  <h4>状态机</h4>
+  <div class="states">
+    <span class="state s-amber">计划中</span><span class="sep">→</span>
+    <span class="state s-blue">已签到</span><span class="sep">→</span>
+    <span class="state s-blue">待审批</span><span class="sep">→</span>
+    <span class="state s-green">已通过</span>
+    <span class="sep">｜</span>
+    <span class="state s-red">已驳回</span><span class="sep">→ 修改后重提</span>
+    <span class="state s-blue">待审批</span>
+  </div>
+  <p class="small">“计划中 / 已签到”可取消，取消需填原因；“待审批”不能直接取消，需经理驳回；“已通过”“已驳回”不可取消。</p>
+
+  <h4>异常与边界</h4>
+  <ul>
+    <li>同一客户同一天存在未结束拜访时，禁止再建计划，提示已有拜访编号。</li>
+    <li>非拜访日期点击签到：按钮禁用并提示“仅在拜访当日可签到”。</li>
+    <li>过期未签到的计划保留“已逾期”标识，可改期（改期后重新计算）或取消。</li>
+    <li>上传附件类型或大小不合规时前端即时提示，后端二次校验。</li>
+    <li>无权限查看拜访详情时返回 403 页面，不展示客户名称。</li>
+  </ul>
+
+  <h3 id="f-product">5.4 产品管理</h3>
+  <p class="module-meta">对应页面：<code>/products</code> · 角色：运营/管理员（读写）、经理/代表（只读）</p>
+  <div class="callout warn"><b>MVP 调整：</b>产品仅提供只读列表与种子数据，作为拜访关联产品和订单明细的选择来源；新建/编辑/停售/删除页面移入 P1。MVP 产品编码、名称、规格、单价、状态均可展示和筛选。</div>
+
+  <h4>目的</h4>
+  <p>维护统一的产品主数据，确保拜访关联产品、订单价格与流向分析使用同一套产品编码。</p>
+
+  <h4>列表与操作</h4>
+  <ul>
+    <li>筛选：关键词（商品名/通用名/编码）、剂型、医保类别、状态。</li>
+    <li>列：产品编码、商品名、通用名、规格、剂型、医保类别、单价、状态、关联订单数、操作。</li>
+    <li>支持新建、编辑、上架/停售；删除仅限未被订单、拜访或流向引用的产品。</li>
+    <li>停售产品保留在历史单据与报表中，但新建订单、拜访、目标时不可选择。</li>
+  </ul>
+
+  <h4>字段</h4>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:15%">字段</th><th style="width:12%">必填</th><th style="width:20%">规则</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>产品编码</td><td>是</td><td><code>PRD-001</code>，全局唯一</td><td>创建后不可修改</td></tr>
+      <tr><td>商品名</td><td>是</td><td>2–40 字</td><td>用于订单与拜访展示</td></tr>
+      <tr><td>通用名</td><td>是</td><td>2–60 字</td><td>用于流向与报表</td></tr>
+      <tr><td>规格</td><td>是</td><td>≤ 30 字</td><td>如 0.25g × 24 片</td></tr>
+      <tr><td>剂型</td><td>是</td><td>片剂/胶囊/注射剂/颗粒剂/口服液/软膏</td><td>下拉选择</td></tr>
+      <tr><td>医保类别</td><td>是</td><td>甲类/乙类/非医保</td><td>下拉选择</td></tr>
+      <tr><td>单价</td><td>是</td><td>0.01–1,000,000 元，2 位小数</td><td>含税单价，作为订单快照来源</td></tr>
+      <tr><td>状态</td><td>是</td><td>在售 / 停售</td><td>默认在售</td></tr>
+      <tr><td>适应症</td><td>否</td><td>≤ 500 字</td><td>代表拜访时可查看</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h4>规则与异常</h4>
+  <ul>
+    <li>编码重复、单价为 0 或负数时阻止保存并定位到字段。</li>
+    <li>修改单价只影响之后提交的订单；已提交订单读取快照价，界面提示“历史订单不受影响”。</li>
+    <li>停售前若有未完成订单，允许停售但提示影响范围，不影响这些订单继续履约。</li>
+    <li>无权限用户看不到“新建/编辑/停售”按钮；直接调用接口返回 403。</li>
+  </ul>
+
+  <h3 id="f-target">5.5 销售目标与业绩</h3>
+  <p class="module-meta">对应页面：<code>/targets</code> · 角色：经理（设置本区域）、管理员（全量）、代表（本人只读）</p>
+  <div class="callout warn"><b>P1 · 本次不实现：</b>MVP 不提供目标设置与完成率页面；工作台以销售额、活跃客户、拜访数、待办为主，业绩排行随本模块一并后置。</div>
+
+  <h4>目的</h4>
+  <p>把月度指标落到“代表 × 产品”粒度，让代表与经理看到同一口径的完成进度，避免线下 Excel 对目标。</p>
+
+  <h4>目标设置</h4>
+  <ul>
+    <li>维度：月份（YYYY-MM）+ 代表 + 产品；三者唯一，重复设置视为修改。</li>
+    <li>目标金额：整数元，1–99,999,999；支持批量导入？P0 为逐条新增与编辑，不做批量。</li>
+    <li>地区经理只能为“本区域代表 + 全部产品”设置；管理员可为全部。</li>
+    <li>当月目标在月末最后一天前可修改；修改后立即重算完成率，保留修改审计。</li>
+    <li>支持复制上月目标到本月（一键生成，已有记录跳过并提示）。</li>
+  </ul>
+
+  <h4>业绩计算</h4>
+  <div class="card">
+    <p><b>销售额：</b>订单归属代表在目标月份内、状态为“已发货”或“已完成”的订单金额合计。订单归属代表默认取客户负责人；运营代下单时仍归属客户负责人。</p>
+    <p><b>完成率：</b>销售额 ÷ 目标金额 × 100%，保留 1 位小数；目标为空时显示“—”。</p>
+    <p><b>达成状态：</b>≥ 100% 为“已达成”（绿），80%–99.9% 为“接近”（琥珀），&lt; 80% 为“未达成”（灰）。</p>
+    <p><b>数据时点：</b>以订单“发货时间”所在月份计入，不以创建时间或回款时间计入；跨月发货按发货月归属。</p>
+  </div>
+
+  <h4>页面</h4>
+  <ul>
+    <li><b>我的目标：</b>代表查看本人当月与近 6 个月目标、销售额、完成率，按产品展开明细。</li>
+    <li><b>团队目标：</b>经理/管理员查看区域或全量，支持按月份、代表、产品筛选；表格底部合计目标与销售额。</li>
+    <li><b>排行：</b>按销售额降序展示代表排名，显示完成率进度条；不展示未设置目标的代表完成率。</li>
+  </ul>
+
+  <h4>异常</h4>
+  <ul>
+    <li>目标金额格式非法、月份早于 2025-01 或晚于当前月 + 12 个月时拒绝保存。</li>
+    <li>代表尝试访问目标设置接口返回 403；经理设置跨区域代表目标返回 403。</li>
+    <li>无目标但有销售额时，销售额照常展示，完成率显示“—”，并提示“未设置目标”。</li>
+  </ul>
+
+  <h3 id="f-order">5.6 订单管理</h3>
+  <p class="module-meta">对应页面：<code>/orders</code>、<code>/orders/new</code>、<code>/orders/:id</code> · 角色：代表（创建）、经理（审批）、运营（发货/回款）、管理员（只读）</p>
+
+  <h4>目的</h4>
+  <p>用一个可审批、可履约、可回款的订单流程承接销售结果，并作为业绩统计的唯一来源。</p>
+
+  <h4>创建订单</h4>
+  <ul>
+    <li>客户：限“合作中”且当前用户可见；商业公司客户同样可下单。</li>
+    <li>明细行：产品（在售）、数量（1–99,999 整数）、单价（默认产品单价，可改但需 ≥ 0.01）、折扣率（0–100%，最多 2 位小数）。</li>
+    <li>至少 1 行、最多 20 行；同一产品不可重复添加，重复时合并数量并提示。</li>
+    <li>选填：期望发货日期（今天起 1–90 天）、收货地址、备注（≤ 500 字）。</li>
+    <li>保存草稿或直接提交审批；提交后生成订单号 <code>SO-YYYYMM-0001</code>。</li>
+  </ul>
+
+  <h4>金额规则</h4>
+  <div class="card">
+    <p>行金额 = <code>round(单价 × 数量 × (1 − 折扣率 ÷ 100), 2)</code>；订单金额 = 所有行金额之和；展示时千分位、两位小数。</p>
+    <p>订单提交时固化产品名称、规格与单价快照；历史订单不随产品改价变化。本系统不计算税额、运费与优惠券。</p>
+  </div>
+
+  <h4>状态机</h4>
+  <div class="states">
+    <span class="state s-gray">草稿</span><span class="sep">→</span>
+    <span class="state s-amber">待审批</span><span class="sep">→</span>
+    <span class="state s-blue">待发货</span><span class="sep">→</span>
+    <span class="state s-blue">已发货</span><span class="sep">→</span>
+    <span class="state s-green">已完成</span>
+    <span class="sep">｜</span>
+    <span class="state s-red">已驳回</span><span class="sep">→ 修改后重提</span>
+  </div>
+  <ul>
+    <li>草稿 → 待审批（提交）；待审批 → 待发货（经理通过）/ 已驳回（经理驳回）；已驳回 → 待审批（修改后重提）。</li>
+    <li>待发货 → 已发货（运营登记物流单号与发货时间）；已发货 → 已完成（回款累计等于订单金额，或运营手动完成且已全额回款）。</li>
+    <li>草稿、待审批、待发货可取消（需填原因）；已发货后不可取消；已有回款时不可取消。</li>
+    <li>仅草稿可删除；其他状态只能取消。</li>
+  </ul>
+
+  <h4>审批、发货与回款</h4>
+  <ul>
+    <li>经理只能审批本区域订单，且不能审批本人创建的订单。</li>
+    <li>发货必填：物流公司、物流单号（6–30 位字母数字）、发货时间（不得晚于当前时间）。</li>
+    <li>回款登记：回款日期、金额（0.01–订单未回款余额）、方式（电汇/承兑/现金/其他）、流水号、备注。</li>
+    <li>累计回款不得超过订单金额；达到 100% 时订单自动变为“已完成”，并写入时间线。</li>
+    <li>列表展示回款进度（已回款/应收），详情页展示回款明细。</li>
+  </ul>
+
+  <h4>列表与详情</h4>
+  <ul>
+    <li>筛选：订单号/客户/代表关键词、状态、日期范围、区域（经理）。</li>
+    <li>列表列：订单号、客户、代表、订单金额、已回款、状态、创建时间、操作。</li>
+    <li>详情：订单信息、明细表、金额汇总、审批记录、物流信息、回款记录、时间线。</li>
+    <li>时间线记录每次状态变化（操作人、时间、原因/单号）。</li>
+  </ul>
+
+  <h4>异常</h4>
+  <ul>
+    <li>客户或产品已停用/流失时提交失败，提示具体对象；草稿可继续查看但不可提交。</li>
+    <li>回款金额超过余额、日期晚于今天、物流单号重复时阻止提交。</li>
+    <li>并发提交同一草稿时只允许一次成功，第二次提示“订单状态已变更，请刷新”。</li>
+    <li>订单无权限查看时返回 403，不显示金额信息。</li>
+  </ul>
+
+  <h3 id="f-flow">5.7 流向管理</h3>
+  <p class="module-meta">对应页面：<code>/flows</code>、<code>/flows/import</code>、<code>/flows/batches</code> · 角色：运营（导入/查看/删批次）、经理/管理员（查看）、代表（无）</p>
+  <div class="callout warn"><b>P1 · 本次不实现：</b>MVP 导航中不出现流向管理；CSV 导入、批次与看板在 P1 实现，订单与拜访数据已为其预留商业公司客户类型。</div>
+
+  <h4>目的</h4>
+  <p>用可重复的 CSV 导入替代手工汇总，验证医药行业特有的“商业公司流向”数据从采集到洞察的完整路径。</p>
+
+  <h4>文件格式</h4>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:20%">列名</th><th style="width:14%">必填</th><th style="width:26%">格式</th><th>校验</th></tr></thead>
+    <tbody>
+      <tr><td>商业公司编码</td><td>是</td><td><code>CUS-</code> 开头</td><td>客户存在且类型为“商业公司”</td></tr>
+      <tr><td>产品编码</td><td>是</td><td><code>PRD-</code> 开头</td><td>产品存在（停售产品允许导入历史流向）</td></tr>
+      <tr><td>月份</td><td>是</td><td><code>YYYY-MM</code></td><td>不晚于当前月，且在近 24 个月内</td></tr>
+      <tr><td>数量</td><td>是</td><td>正整数</td><td>1–9,999,999</td></tr>
+      <tr><td>金额</td><td>是</td><td>非负数字，最多 2 位小数</td><td>0–999,999,999.99</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">文件要求：UTF-8 编码（可带 BOM），首行为表头，最大 2MB、2000 行；模板提供 6 条正确行 + 3 条错误行，便于一次验证三类结果。</p>
+
+  <h4>导入流程</h4>
+  <ol>
+    <li>下载模板 → 上传文件 → 后端解析并逐行校验，返回预览：总行数、可导入、覆盖、错误。</li>
+    <li>预览表格展示前 20 行（含行号、状态、错误原因）；可下载完整错误报告（CSV，UTF-8 BOM）。</li>
+    <li>点击“确认导入”：正确行写入，错误行跳过；同一“商业公司 + 产品 + 月份”覆盖旧值并计入“覆盖”。</li>
+    <li>生成批次记录：批次号 <code>FL-YYYYMMDD-001</code>、文件名、总行数、成功/覆盖/失败数、操作人、时间、状态。</li>
+    <li>批次状态：全部成功 → 成功；部分成功 → 部分成功；全部失败 → 失败；处理中不可删除。</li>
+  </ol>
+
+  <h4>批次管理</h4>
+  <ul>
+    <li>批次列表按时间倒序，支持查看详情（下载原文件、错误报告）与删除。</li>
+    <li>删除批次：删除该批次导入且仍归属该批次的流向记录；被后续批次覆盖的记录不删除。二次确认后执行。</li>
+    <li>同一文件可重复上传，结果一致；覆盖不产生重复记录。</li>
+    <li>导入失败（格式、编码、超限）时整体拒绝，不写入任何数据，并给出可修正的原因。</li>
+  </ul>
+
+  <h4>流向看板</h4>
+  <ul>
+    <li>筛选：月份范围（默认近 6 个月）、产品、商业公司、区域。</li>
+    <li>KPI：流向数量、流向金额、环比、覆盖商业公司数。</li>
+    <li>图表：月度流向趋势（折线/柱状）、产品 Top 10（横向条）、商业公司 Top 10、区域金额占比。</li>
+    <li>明细表：月份、商业公司、产品、数量、金额、批次号；支持分页与 CSV 导出。</li>
+    <li>统计口径：金额按流向记录金额求和，数量按正整数求和；不含订单数据，避免重复计算。</li>
+  </ul>
+
+  <h4>异常</h4>
+  <ul>
+    <li>文件非 CSV、编码错误、缺少表头、超过行数/大小限制时整体拒绝并提示。</li>
+    <li>所有行都失败时不生成可删除批次，仅保留失败报告？<b>决策：</b>生成“失败”批次，保留错误报告与文件名，不写入流向数据。</li>
+    <li>删除批次时若记录已被覆盖，提示“该批次部分记录已被后续批次覆盖，仅删除归属本批次的记录”。</li>
+    <li>代表角色访问流向菜单不可见；直接访问路由显示 403。</li>
+  </ul>
+
+  <h3 id="f-report">5.8 报表中心</h3>
+  <p class="module-meta">对应页面：<code>/reports</code>（四个页签） · 角色：全部，按数据范围裁剪</p>
+  <div class="callout warn"><b>P1 · 本次不实现：</b>MVP 不提供报表中心与 CSV 导出；工作台仅保留核心 KPI，明细数据在各业务列表内查看。</div>
+
+  <h4>目的</h4>
+  <p>让不同角色用同一套口径查看结果数据，并能把当前筛选结果导出为 CSV 用于复盘。</p>
+
+  <h4>报表清单</h4>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:16%">报表</th><th style="width:30%">筛选</th><th>指标与列</th></tr></thead>
+    <tbody>
+      <tr><td><b>销售报表</b></td><td>月份范围、区域、代表、产品、订单状态</td><td>目标金额、销售额、完成率、订单数、客单价；按代表/产品/月份分组切换</td></tr>
+      <tr><td><b>拜访报表</b></td><td>月份范围、区域、代表、拜访目的</td><td>计划数、完成数、通过数、驳回数、通过率、覆盖客户数、人均拜访</td></tr>
+      <tr><td><b>流向报表</b></td><td>月份范围、区域、商业公司、产品</td><td>流向数量、流向金额、环比、商业公司数、产品数；按商业公司/产品分组切换</td></tr>
+      <tr><td><b>客户报表</b></td><td>区域、类型、等级、状态、创建月份</td><td>客户总数、新增数、合作中、流失数、A 级占比；按类型/等级/区域分组</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h4>展示与导出</h4>
+  <ul>
+    <li>顶部筛选区 + 指标卡 + 图表 + 明细表；筛选变化后图表与表格同步刷新，无需整页跳转。</li>
+    <li>表格支持按数值列排序、分页；合计行与当前筛选一致。</li>
+    <li>“导出 CSV”导出当前筛选下的全部明细（不受分页限制），文件名 <code>销售报表_2026-11-18.csv</code>，UTF-8 带 BOM，Excel 可直接打开。</li>
+    <li>导出同样受数据权限限制；无数据时导出按钮禁用。</li>
+  </ul>
+
+  <h4>口径</h4>
+  <ul>
+    <li>销售与拜访报表的“完成”“通过”以状态终态为准；拜访按拜访日期归属月份，销售按发货时间归属月份。</li>
+    <li>流向报表与流向看板同源；订单与流向不合并计算。</li>
+    <li>客户报表的新增数按创建时间统计，流失数按状态变更时间统计（取审计记录最近一次变为流失的时间）。</li>
+  </ul>
+
+  <h3 id="f-system">5.9 系统管理</h3>
+  <p class="module-meta">对应页面：<code>/system/users</code>、<code>/system/roles</code>、<code>/system/dicts</code>、<code>/system/audit</code>、<code>/system/reset</code> · 角色：仅管理员</p>
+  <div class="callout warn"><b>P1 · 本次仅保留重置：</b>MVP 不提供用户管理、角色矩阵、字典与审计页面；管理员在右上角“演示数据”中执行重置（输入 RESET）。固定账号与字典由种子数据提供。</div>
+
+  <h4>用户管理</h4>
+  <ul>
+    <li>列表：账号、姓名、角色、区域、手机、状态、最后登录时间、操作。</li>
+    <li>新建/编辑：账号（4–20 位字母数字，唯一，创建后不可改）、姓名、角色、区域（代表/经理必填）、手机、状态。</li>
+    <li>停用用户后立即无法登录，历史数据保留；不能停用自己，不能停用最后一个启用状态的管理员。</li>
+    <li>重置密码：二次确认后恢复为 <code>Chem@123</code>，并强制该用户下次登录修改密码？<b>决策：</b>演示环境不强制改密，仅提示已重置。</li>
+    <li>不支持删除用户，避免历史单据失去归属；离职场景使用停用。</li>
+  </ul>
+
+  <h4>角色矩阵</h4>
+  <ul>
+    <li>以只读矩阵展示 5 个角色对 9 个模块的查看/编辑/审批/导出权限，与第 2 章一致。</li>
+    <li>P0 不支持自定义角色与权限点；页面提示“演示版固定角色”。</li>
+  </ul>
+
+  <h4>字典维护</h4>
+  <ul>
+    <li>可维护：拜访目的、客户来源、客户标签、区域（仅新增显示名，不新增权限范围）。</li>
+    <li>只读内置：客户类型、客户等级、客户状态、产品剂型、医保类别、订单状态、拜访状态。</li>
+    <li>字典项停用后不再出现在新建表单，历史数据展示原值；被业务引用的字典项不可删除。</li>
+    <li>字典编码唯一、名称同组内唯一，长度 2–20 字。</li>
+  </ul>
+
+  <h4>审计日志</h4>
+  <ul>
+    <li>记录范围：登录/退出、登录失败、客户与联系人变更、拜访提交/审批/驳回、订单状态变更、回款、产品变更、目标变更、流向导入/删除、用户与字典变更、数据重置。</li>
+    <li>字段：时间、操作人、角色、模块、动作、对象类型、对象标识、结果（成功/失败）、IP、详情摘要。</li>
+    <li>筛选：时间范围、操作人、模块、结果；仅查看，不提供删除与编辑。</li>
+    <li>详情摘要为可读文本，例如“将订单 SO-202611-0012 从待审批变更为待发货”。</li>
+  </ul>
+
+  <h4>演示数据重置</h4>
+  <div class="callout danger">
+    <b>高风险操作。</b>页面明确列出将清空的范围：客户、联系人、拜访、订单、回款、目标、产品、流向、批次、审计、用户（恢复种子账号）。需输入 <code>RESET</code> 并二次确认。执行期间按钮禁用并显示进度；完成后所有会话失效，跳转登录页并提示“演示数据已重置”。
+  </div>
+  <ul>
+    <li>重置后数据与首次启动完全一致（固定随机种子，保证每次客户数、订单数、图表形态一致）。</li>
+    <li>重置完成后写入一条“系统数据重置”审计记录，记录操作人与时间。</li>
+    <li>重置失败时回滚到重置前状态，并提示失败原因，避免留下半套数据。</li>
+  </ul>
+
+  <h3 id="f-p1">5.10 P1 预留模块</h3>
+  <p>以下模块本期不实现，但在导航中不出现，避免“可点击但空白”。规格仅保留业务方向，供后续迭代评估。</p>
+  <div class="grid-2">
+    <div class="card">
+      <h4>学术活动与会议</h4>
+      <p class="small">活动计划、预算、客户邀请、签到、会议纪要与 ROI 评估；与客户、拜访、费用模块关联。</p>
+    </div>
+    <div class="card">
+      <h4>费用与预算</h4>
+      <p class="small">费用申请 → 审批 → 核销 → 报销；按产品/区域/代表分析投入产出，与订单和活动关联。</p>
+    </div>
+  </div>
+</section>
+
+<section id="rules">
+  <h2><span class="no">06</span>共享业务规则</h2>
+  <p class="lead">以下规则被多个模块引用，只在此处定义一次；功能章节出现冲突时以本章为准。</p>
+
+  <h3>6.1 编号规则</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>对象</th><th>格式</th><th>示例</th><th>生成规则</th></tr></thead>
+    <tbody>
+      <tr><td>客户</td><td><code>CUS-0001</code></td><td>CUS-0032</td><td>全局自增，4 位补零</td></tr>
+      <tr><td>拜访</td><td><code>VIS-YYYYMM-0001</code></td><td>VIS-202611-0008</td><td>按月重置，4 位补零</td></tr>
+      <tr><td>订单</td><td><code>SO-YYYYMM-0001</code></td><td>SO-202611-0012</td><td>按月重置，4 位补零</td></tr>
+      <tr><td>流向批次</td><td><code>FL-YYYYMMDD-001</code></td><td>FL-20261118-001</td><td>按日重置，3 位补零</td></tr>
+      <tr><td>产品</td><td><code>PRD-001</code></td><td>PRD-012</td><td>全局自增，3 位补零</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">编号由后端生成，前端不可编辑；并发创建时通过数据库唯一约束保证不重复，冲突时自动重试一次。</p>
+
+  <h3>6.2 金额与日期</h3>
+  <ul>
+    <li>所有金额单位为人民币元，存储两位小数，计算采用四舍五入（HALF_UP）；展示千分位。</li>
+    <li>折扣率以百分比输入（如 10 表示 9 折），参与计算时除以 100。</li>
+    <li>日期格式 <code>YYYY-MM-DD</code>，时间格式 <code>YYYY-MM-DD HH:mm</code>，时区固定 Asia/Shanghai。</li>
+    <li>月份格式 <code>YYYY-MM</code>；“本月”以服务器当前时区计算。</li>
+    <li>“今天”指服务器当前日期；签到、回款日期等判断均以此时区为准。</li>
+  </ul>
+
+  <h3>6.3 审批与状态</h3>
+  <ul>
+    <li>通用审批原则：提交人不能审批自己的单据；审批人必须拥有对应数据范围。</li>
+    <li>通过后不可撤销；驳回必须填写原因，原因进入单据时间线与审计日志。</li>
+    <li>状态只能通过定义的流转路径变更；后端对每次变更校验当前状态，非法流转返回 409。</li>
+    <li>状态变更后，相关列表、工作台、报表在同一请求完成后即时反映，不做定时缓存。</li>
+  </ul>
+
+  <h3>6.4 列表、导出与空态</h3>
+  <ul>
+    <li>分页参数 <code>page</code> 从 1 开始，<code>size</code> 默认 20、最大 100；超出范围时后端纠正为边界值。</li>
+    <li>列表默认按创建时间倒序；支持排序的列在表头显示箭头，排序参数为字段名 + asc/desc。</li>
+    <li>空列表与无搜索结果使用不同文案；无权限与不存在使用不同页面，避免泄露数据是否存在。</li>
+    <li>CSV 导出统一 UTF-8 带 BOM、逗号分隔、字段含逗号或换行时加双引号；导出文件名含报表名与日期。</li>
+  </ul>
+
+  <h3>6.5 审计与并发</h3>
+  <ul>
+    <li>所有写操作记录审计：操作人、时间、模块、动作、对象、结果、IP、摘要；失败请求记录失败原因。</li>
+    <li>涉及金额、审批、删除、重置的操作必须二次确认，确认文案包含对象名称与关键金额。</li>
+    <li>并发修改使用版本号校验；版本不一致时提示“数据已被他人更新，请刷新后重试”，不覆盖他人修改。</li>
+    <li>提交类按钮在请求期间禁用并显示加载态，防止重复提交。</li>
+  </ul>
+
+  <h3>6.6 附件与文件</h3>
+  <ul>
+    <li>拜访附件支持 jpg/jpeg/png/pdf，单个 ≤ 5MB，每条拜访最多 3 个；存储于本地目录 <code>data/uploads</code>。</li>
+    <li>文件下载需登录且有对应拜访查看权限；文件名使用随机 ID，展示原始文件名。</li>
+    <li>流向导入原文件与错误报告保存在本地 <code>data/imports</code>，随批次删除一并清理。</li>
+    <li>本次不实现病毒扫描；演示环境不上传真实敏感文件。</li>
+  </ul>
+</section>
+
+<section id="demo">
+  <h2><span class="no">07</span>演示数据与网页自测</h2>
+  <p class="lead">所有数据由系统在首次启动时自动生成，不依赖外部文件、数据库或网络。演示数据基于“当前日期”滚动生成近 6 个月，保证任何时间打开都有当月数据。</p>
+
+  <h3>7.1 种子数据规模</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>对象</th><th class="num" style="width:12%">数量</th><th>分布与用途</th></tr></thead>
+    <tbody>
+      <tr><td>用户</td><td class="num">8</td><td>管理员 1、华东经理 1、华北经理 1、代表 4、运营 1；密码统一</td></tr>
+      <tr><td>客户</td><td class="num">28</td><td>医院 12、连锁 5、单体药店 5、商业公司 6；华东/华北各半；A/B/C 均有</td></tr>
+      <tr><td>联系人</td><td class="num">46</td><td>每客户 1–2 人，含主要联系人与决策人角色</td></tr>
+      <tr><td>产品</td><td class="num">12</td><td>10 个在售、2 个停售；覆盖 6 种剂型与 3 类医保</td></tr>
+      <tr><td>拜访</td><td class="num">120</td><td>近 6 个月：通过 78、待审批 10、已驳回 6、计划中/已签到 26（含今日计划）</td></tr>
+      <tr><td>订单</td><td class="num">48</td><td>已完成 28、已发货 6、待发货 4、待审批 4、草稿 3、驳回/取消 3</td></tr>
+      <tr><td>回款记录</td><td class="num">66</td><td>覆盖部分回款与全额回款，用于验证回款进度</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="callout"><b>数据可读性要求：</b>客户名称使用“城市 + 机构类型 + 序号”的虚构名称（如“上海市示范第一医院”），产品使用虚构商品名并标注“演示”。不得使用真实医院、医生或皓元医药真实产品数据。</div>
+  <div class="callout ok"><b>今日数据：</b>种子数据保证每个代表至少有 1 条“今日计划中”拜访，华东/华北经理各有至少 2 条待审批拜访与 1 条待审批订单，运营有 2 条待发货订单，测试者登录后即可操作。</div>
+
+  <h3>7.2 MVP 手动自测脚本（本次执行）</h3>
+  <p class="small">建议按顺序执行；每步均在浏览器完成，不需要 Swagger、数据库客户端或命令行。预计一次完整走查约 10–15 分钟。</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:5%">#</th><th style="width:34%">操作</th><th>预期结果</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>启动系统，使用 <code>admin</code> 登录，点击右上角用户头像 → “演示数据重置”，输入 <code>RESET</code></td><td>重置成功并跳转登录页；重新登录后全量客户 28、产品 12、拜访约 120、订单约 48</td></tr>
+      <tr><td>2</td><td>使用 <code>mr.chen</code> 登录，查看工作台</td><td>KPI 显示本月销售额、活跃客户、本月拜访、待我处理；今日拜访至少 1 条；无目标完成率卡片</td></tr>
+      <tr><td>3</td><td>客户管理 → 新建客户：医院、A 级、填年潜力、华东、负责人陈晨；保存后添加 2 个联系人并设主要联系人</td><td>生成 CUS 编码；列表可见；主要联系人唯一；A 级未填潜力时无法保存；负责人字段默认本人</td></tr>
+      <tr><td>4</td><td>拜访管理 → 新建今日拜访（选择新客户）→ 演示签到 → 填写结果、反馈、下一步并关联产品 → 提交</td><td>状态依次为计划中 → 已签到 → 待审批；同客户同日重复创建被拦截；未签到无法提交记录</td></tr>
+      <tr><td>5</td><td>退出，使用 <code>dsm.east</code> 登录，工作台“待我审批”提示待办；进入拜访管理筛选“待审批”，先驳回一条拜访并填写原因，再通过另一条</td><td>驳回后代表工作台出现待办；通过的记录不可编辑；客户“最近拜访”更新为今天</td></tr>
+      <tr><td>6</td><td>切回 <code>mr.chen</code>，打开被驳回拜访 → 修改 → 重新提交；<code>dsm.east</code> 再次通过</td><td>原填写内容保留；重提后回到待审批；通过后本月拜访统计增加 1 次</td></tr>
+      <tr><td>7</td><td>订单管理 → 新建订单：选择合作中客户、2 个产品、修改折扣 → 提交；<code>dsm.east</code> 审批通过；<code>ops.zhou</code> 登记物流单号并发货</td><td>行金额与订单金额计算正确；状态按 草稿 → 待审批 → 待发货 → 已发货 流转；产品单价以快照保存</td></tr>
+      <tr><td>8</td><td><code>ops.zhou</code> 对订单登记两次回款，第二次使累计等于订单金额</td><td>第一次后订单仍为“已发货”，未回款余额减少；第二次后自动变为“已完成”；回款明细与时间线完整</td></tr>
+      <tr><td>9</td><td>权限验证：<code>mr.chen</code> 直接访问华北客户详情 URL；尝试访问订单审批操作；查看侧边菜单</td><td>显示 403 无权限页，不展示客户名称与金额；订单详情不出现审批按钮；侧边菜单无系统管理入口</td></tr>
+      <tr><td>10</td><td>异常验证：新建重名客户、回款金额超过余额、连续点击订单提交</td><td>分别给出字段级/业务级错误提示；原表单数据保留；重复提交只生成一条订单</td></tr>
+      <tr><td>11</td><td><code>admin</code> 再次执行数据重置，同时用另一个浏览器标签页保持 <code>mr.chen</code> 登录并尝试操作</td><td>旧会话失效并跳转登录页；重新登录后数据恢复初始规模，可再次按本脚本自测</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+</section>
+
+<section id="tech">
+  <h2><span class="no">08</span>技术交付约束</h2>
+  <p class="lead">本章是用户明确指定的实现约束与自测保障，不改变第 5 章的业务行为。若技术选型调整，以不影响验收标准为前提。</p>
+
+  <h3>8.1 工程结构</h3>
+  <div class="card">
+    <p>采用前后端分离的单仓库结构，根目录 <code>c:\trae\医药CRM</code>：</p>
+    <ul>
+      <li><code>backend/</code> — Spring Boot 服务，默认端口 8080，API 前缀 <code>/api/v1</code>；</li>
+      <li><code>frontend/</code> — Vue 3 单页应用，开发端口 5173，通过 Vite 代理访问后端；</li>
+      <li><code>docs/</code> — 本规格与品牌资源；</li>
+      <li><code>scripts/</code> — 本地启动脚本 <code>start.ps1</code>；</li>
+      <li><code>data/</code> — 运行时 H2 数据库文件（不提交版本库）。</li>
+    </ul>
+  </div>
+
+  <h3>8.2 技术栈</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h4>后端</h4>
+      <ul class="small">
+        <li>Java 17（LTS） + Spring Boot 3.3.x</li>
+        <li>Spring Security 6 + JWT（无状态鉴权）</li>
+        <li>MyBatis-Plus 3.5（分页、乐观锁、逻辑删除按需）</li>
+        <li>H2 2.x 文件模式，开启 MySQL 兼容；零安装、随项目启动</li>
+        <li>schema.sql 幂等建表；演示数据由 Java 种子服务生成</li>
+        <li>JUnit 5（核心规则单测，随迭代补充）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>前端</h4>
+      <ul class="small">
+        <li>Vue 3.5 + TypeScript + Vite 5</li>
+        <li>Element Plus 2.x（统一表单、表格、弹窗、提示）</li>
+        <li>Pinia（登录态、用户信息、字典缓存）</li>
+        <li>Vue Router 4（按角色生成菜单与路由守卫）</li>
+        <li>Axios（统一错误提示、401 跳转、加载态）</li>
+        <li>ECharts 5（工作台与报表图表）</li>
+        <li>dayjs（日期与月份处理）</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>8.3 核心领域对象</h3>
+  <p class="small">MVP 核心对象：用户、区域、客户、联系人、拜访、产品、订单、订单行、回款、附件。P1 再增加销售目标、流向记录、导入批次、字典项与审计日志。</p>
+
+  <h3>8.4 自测保障（硬性）</h3>
+  <ul class="rule-list">
+    <li><b>零外部依赖：</b>不依赖 MySQL、Redis、对象存储、地图或第三方 API；仅需 JDK 17 与 Node.js 即可运行。</li>
+    <li><b>自动初始化：</b>首次启动自动建表并生成第 7 章种子数据；控制台与页面均能看到“演示数据已就绪”的提示。</li>
+    <li><b>全流程网页化：</b>所有 MVP 功能必须有页面入口，不允许“只能通过接口完成”的功能；Swagger 仅用于排查。</li>
+    <li><b>一键重置：</b>管理员在页面内即可恢复初始数据；重置使用固定随机种子，保证每次数据规模与图表形态一致。</li>
+    <li><b>示例数据内置：</b>登录页展示演示账号一键填充；重置即恢复完整种子数据，不依赖仓库外文件。</li>
+    <li><b>启动脚本：</b><code>scripts/start.ps1</code> 依次启动后端与前端并打开浏览器；首次运行需联网安装依赖，之后可离线运行。</li>
+    <li><b>错误可读：</b>所有失败提示为中文、可操作；不出现堆栈、SQL 或英文异常码裸奔。</li>
+  </ul>
+
+  <h3>8.5 界面与品牌</h3>
+  <ul>
+    <li>品牌主色取皓元医药 Logo 的深蓝（<code>#0B4F9E</code>），辅色医疗青（<code>#0D9B8A</code>）；浅灰背景、白色卡片、克制阴影。</li>
+    <li>登录页与侧边栏使用本地下载的皓元医药 Logo（<code>docs/assets/</code>），不引用外链图片，断网也能正常显示。</li>
+    <li>桌面优先，目标分辨率 1440×900；最小适配 1280 宽；表格、筛选、表单在 1366 宽下不横向溢出。</li>
+    <li>状态色固定：进行中蓝、待处理琥珀、成功绿、失败红、中性灰；全站一致。</li>
+    <li>不使用“lorem ipsum”或空白占位图；无数据时提供明确说明与下一步入口。</li>
+  </ul>
+
+  <h3>8.6 工程质量要求</h3>
+  <ul>
+    <li>统一响应结构与错误码：参数错误 400、未登录 401、无权限 403、不存在 404、状态冲突 409、服务异常 500；前端按类型提示。</li>
+    <li>所有金额、状态流转、权限判断在后端完成；前端只做展示与即时校验，不作为安全边界。</li>
+    <li>核心规则单测覆盖：订单金额计算、拜访/订单状态机、数据范围过滤、审批人不能自审、回款超额拦截。</li>
+    <li>种子数据生成幂等：重复执行不会产生重复数据；重置在同一事务内完成，失败回滚。</li>
+    <li>前端构建无 TypeScript 错误、无控制台报错；关键列表与表单具备加载态、空态与错误态。</li>
+  </ul>
+</section>
+
+<section id="accept">
+  <h2><span class="no">09</span>验收标准</h2>
+  <p class="lead">MVP 执行以下 8 条验收；每条均可由非开发人员在浏览器中独立验证。目标、流向、报表、系统管理与审计的验收随 P1 启用。</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:9%">编号</th><th style="width:25%">验收项</th><th>通过条件</th></tr></thead>
+    <tbody>
+      <tr><td><b>AC-01</b></td><td>本地启动与登录</td><td>按启动脚本可打开登录页；8 个演示账号均可登录；错误密码与停用账号提示正确</td></tr>
+      <tr><td><b>AC-02</b></td><td>角色与数据权限</td><td>代表仅见本人客户，经理仅见本区域；越权 URL 返回 403；菜单按角色隐藏</td></tr>
+      <tr><td><b>AC-03</b></td><td>客户与联系人</td><td>四类客户可新建、编辑、筛选；重名拦截；主要联系人唯一；转交后归属正确</td></tr>
+      <tr><td><b>AC-04</b></td><td>拜访闭环</td><td>计划 → 签到 → 提交 → 驳回 → 重提 → 通过全链路可完成；重复/逾期/非当日签到被正确拦截</td></tr>
+      <tr><td><b>AC-05</b></td><td>订单闭环</td><td>下单 → 审批 → 发货 → 两次回款 → 自动完成可完成；金额计算与快照正确；超额回款被拦截</td></tr>
+      <tr><td><b>AC-06</b></td><td>产品只读</td><td>产品列表可查看与筛选；拜访/订单只能选择在售产品；无产品维护入口</td></tr>
+      <tr><td><b>AC-07</b></td><td>工作台一致性</td><td>工作台 KPI 与客户/拜访/订单列表数字一致；角色差异正确；无目标完成率卡片</td></tr>
+      <tr><td><b>AC-08</b></td><td>数据重置与会话</td><td>重置需输入 RESET；重置后数据恢复初始规模；旧会话失效；重复重置结果一致</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="open">
+  <h2><span class="no">10</span>已确认决策与实施安排</h2>
+  <p class="lead">2026-11-18 评审已确认以下 4 项决策，规格按 MVP 执行；未确认项均已标注为假设。</p>
+
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:18%">决策项</th><th style="width:22%">结论</th><th>对实现的影响</th></tr></thead>
+    <tbody>
+      <tr><td>P0 范围</td><td><b>缩小 MVP</b></td><td>只实现登录/工作台、客户与联系人、拜访、订单，外加产品只读列表与演示数据重置；目标、流向、报表、系统管理移入 P1</td></tr>
+      <tr><td>数据库</td><td><b>H2 内置</b></td><td>文件模式随应用启动，零安装；种子数据自动生成，支持页面内 RESET 重置</td></tr>
+      <tr><td>演示数据</td><td><b>全部虚构</b></td><td>虚构医院、药店、商业公司、联系人与产品；页面标注“演示数据”，不使用真实机构信息</td></tr>
+      <tr><td>视觉风格</td><td><b>皓元蓝 + 医疗青</b></td><td>深蓝主色、青色点缀、浅色工作台；Element Plus 组件，信息密度适中</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>10.1 已标注的假设</h3>
+  <ul>
+    <li>[Assumption] 单租户、单语言（简体中文）、桌面浏览器优先；不做移动端专门适配。</li>
+    <li>[Assumption] 演示项目部署在本机，允许使用固定的演示密码与 HTTP 访问。</li>
+    <li>[Assumption] 组织仅华东、华北两个区域，每区域两名代表；如需扩展区域，通过种子数据调整。</li>
+    <li>[Assumption] 产品价格均为含税价，订单不做税率、运费与发票管理。</li>
+    <li>[Assumption] 产品仅由种子数据提供只读查询，MVP 不提供产品维护页面。</li>
+  </ul>
+
+  <h3>10.2 主要风险与应对</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:24%">风险</th><th>应对</th></tr></thead>
+    <tbody>
+      <tr><td>MVP 范围扩散</td><td>锁定 4 个业务模块 + 产品只读 + 重置；P1 需求只记录不实现，导航中不出现</td></tr>
+      <tr><td>演示数据随日期失效</td><td>种子数据基于当前日期滚动生成，保证任何月份打开都有“本月”数据</td></tr>
+      <tr><td>重置时仍有旧会话操作</td><td>重置后提升全局数据版本，旧 JWT 校验失败并要求重新登录</td></tr>
+      <tr><td>H2 并发能力有限</td><td>演示场景单用户操作；关键写操作加乐观锁与唯一约束，避免脏数据</td></tr>
+      <tr><td>固定演示密码被误用于公网</td><td>仅本机演示；规格与登录页明确不得公网部署，登录页展示“演示环境”标识</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>10.3 评审通过后的实施顺序</h3>
+  <div class="flow vertical">
+    <div class="node"><b>Step 1 · 工程初始化</b><span>Spring Boot + Vue 脚手架、H2 建表、登录与统一响应</span></div>
+    <div class="arrow">↓</div>
+    <div class="node"><b>Step 2 · 主数据与权限</b><span>客户、联系人、产品只读、数据范围</span></div>
+    <div class="node"><b>Step 3 · 拜访</b><span>计划、签到、记录提交、审批与驳回重提</span></div>
+    <div class="node"><b>Step 4 · 订单</b><span>下单、审批、发货、回款与自动完成</span></div>
+    <div class="node"><b>Step 5 · 工作台与重置</b><span>角色 KPI、待办、趋势图、演示数据重置</span></div>
+    <div class="node"><b>Step 6 · 联调与自测</b><span>按 7.2 脚本走查，逐条核对第 9 章验收标准</span></div>
+  </div>
+</section>
+
+<div class="footer">
+  <span>皓元医药营销 CRM · 产品规格说明书 v1.8 · 2026-11-18</span>
+  <span>评审稿 · 待确认 Q1–Q4 后进入实现</span>
+</div>
+
+</main>
+
+<a class="backtop" href="#" title="回到顶部">↑</a>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('#toc a'));
+  var targets = links.map(function(a){
+    var id = a.getAttribute('href').slice(1);
+    return { link: a, el: document.getElementById(id) };
+  }).filter(function(t){ return t.el; });
+
+  function onScroll(){
+    var y = window.scrollY + 120;
+    var current = targets[0];
+    targets.forEach(function(t){
+      if (t.el.offsetTop <= y) { current = t; }
+    });
+    links.forEach(function(a){ a.classList.remove('active'); });
+    if (current) { current.link.classList.add('active'); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var top = document.querySelector('.backtop');
+  if (top) {
+    top.addEventListener('click', function(e){
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+})();
+</script>
+</div>
+</body>
+</html>
